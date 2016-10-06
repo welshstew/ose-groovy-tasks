@@ -29,3 +29,8 @@ task loopPrintln (dependsOn: 'classes', type: JavaExec) {
     main = 'LoopPrintln'
     classpath = sourceSets.main.runtimeClasspath
 }
+
+task generateTemplate (dependsOn: 'classes', type: JavaExec) {
+    main = 'BuildTemplate'
+    classpath = sourceSets.main.runtimeClasspath
+}
