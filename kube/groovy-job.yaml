@@ -1,21 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Job
 metadata:
-  name: groovyPrintLoopTask
+  name: print-loop
 spec:
   selector:
     matchLabels:
-      app: groovyPrintLoopTask
+      app: print-loop
   parallelism: 1
   completions: 1
   template:
     metadata:
-      name: groovyPrintLoopTask
+      name: print-loop
       labels:
-        app: groovyPrintLoopTask
+        app: print-loop
     spec:
       containers:
-      - name: groovyPrintLoopTask
+      - name: print-loop
         image: 172.30.177.25:5000/groovy/ose-groovy-tasks:latest
         command: ["gradle",  "loopPrintln", "-p", "/opt/app-root/src/source/"]
       restartPolicy: Never
